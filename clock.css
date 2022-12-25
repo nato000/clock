@@ -20,7 +20,12 @@ body {
 	--number-height: 200px;
 	--number-width: 100px;
 	--border-radius: 20px;
-	--box-shadow: 0 0 4px 7px rgba(0, 0, 0, 0.5);
+	--shadow-color: rgba(0, 0, 0, 0.5);
+	--box-shadow: 0 0 4px 7px var(--shadow-color);
+	--transition: background 0.2s ease-in-out;
+	--transition-delayed: background 0.2s cubic-bezier(1, -0.07, 1, -0.07);
+	--segments-color: rgba(0, 0, 0, 0.3);
+	--main-color: rgb(255, 255, 255);
 	font-size: 40px;
 	display: flex;
 }
@@ -44,7 +49,7 @@ body {
 .clock-dots__bottom {
 	width: var(--size);
 	height: var(--size);
-	background-color: rgb(197 0 0);
+	background-color: var(--main-color);
 	box-shadow: var(--box-shadow);
 	border-radius: var(--border-radius);
 }
@@ -73,13 +78,13 @@ body {
 
 .clock__segment {
 	position: absolute;
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: var(--segments-color);
 	border-radius: var(--border-radius);
-	transition: 0.1s ease-in-out;
+	transition: var(--transition-delayed);
 }
 
 .clock__segment--active {
-	background-color: rgb(197 0 0);
+	background-color: var(--main-color);
 	box-shadow: var(--box-shadow);
 }
 
