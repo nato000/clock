@@ -1,0 +1,134 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background-color: #494949;
+}
+
+.main {
+	display: flex;
+	height: 100vh;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.clock {
+	--size: 12px;
+	--number-height: 200px;
+	--number-width: 100px;
+	--border-radius: 20px;
+	--box-shadow: 0 0 4px 7px rgba(0, 0, 0, 0.5);
+	font-size: 40px;
+	display: flex;
+}
+
+.clock-hour,
+.clock-minutes,
+.clock-seconds {
+	display: flex;
+	width: calc(var(--number-width) * 2 + 50px);
+	justify-content: space-around;
+	margin: 0 10px;
+}
+
+.clock-dots {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.clock-dots__top,
+.clock-dots__bottom {
+	width: var(--size);
+	height: var(--size);
+	background-color: rgb(197 0 0);
+	box-shadow: var(--box-shadow);
+	border-radius: var(--border-radius);
+}
+
+@media (max-width: 700px) {
+	.clock {
+		flex-direction: column;
+	}
+
+	.clock-hour,
+	.clock-minutes,
+	.clock-seconds {
+		margin: 20px 0;
+	}
+
+	.clock-dots {
+		flex-direction: row;
+	}
+}
+
+.clock__number {
+	position: relative;
+	width: var(--number-width);
+	height: var(--number-height);
+}
+
+.clock__segment {
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.3);
+	border-radius: var(--border-radius);
+	transition: 0.1s ease-in-out;
+}
+
+.clock__segment--active {
+	background-color: rgb(197 0 0);
+	box-shadow: var(--box-shadow);
+}
+
+.clock__segment-top,
+.clock__segment-mid,
+.clock__segment-bottom {
+	height: var(--size);
+	left: 50%;
+	transform: translateX(-50%);
+	width: calc(100% - var(--size) * 2);
+}
+
+.clock__segment-top-left,
+.clock__segment-top-right,
+.clock__segment-bottom-left,
+.clock__segment-bottom-right {
+	width: var(--size);
+	height: calc((100% - var(--size) * 3) / 2);
+}
+
+.clock__segment-top {
+	top: 0;
+}
+
+.clock__segment-top-left {
+	top: var(--size);
+	left: 0;
+}
+
+.clock__segment-top-right {
+	top: var(--size);
+	right: 0;
+}
+
+.clock__segment-mid {
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.clock__segment-bottom-left {
+	bottom: var(--size);
+	left: 0;
+}
+
+.clock__segment-bottom-right {
+	bottom: var(--size);
+	right: 0;
+}
+
+.clock__segment-bottom {
+	bottom: 0;
+}

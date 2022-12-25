@@ -1,0 +1,80 @@
+export const numbers = {
+	0: {
+		0: '.clock__segment-top',
+		1: '.clock__segment-top-left',
+		2: '.clock__segment-top-right',
+		3: '.clock__segment-bottom-left',
+		4: '.clock__segment-bottom-right',
+		5: '.clock__segment-bottom'
+	},
+	1: {
+		0: '.clock__segment-top-right',
+		1: '.clock__segment-bottom-right',
+	},
+	2: {
+		0: '.clock__segment-top',
+		1: '.clock__segment-top-right',
+		2: '.clock__segment-mid',
+		3: '.clock__segment-bottom-left',
+		4: '.clock__segment-bottom',
+	},
+	3: {
+		0: '.clock__segment-top',
+		1: '.clock__segment-top-right',
+		2: '.clock__segment-mid',
+		3: '.clock__segment-bottom-right',
+		4: '.clock__segment-bottom',
+	},
+	4: {
+		0: '.clock__segment-top-left',
+		1: '.clock__segment-top-right',
+		2: '.clock__segment-mid',
+		3: '.clock__segment-bottom-right',
+	},
+	5: {
+		0: '.clock__segment-top',
+		1: '.clock__segment-top-left',
+		2: '.clock__segment-mid',
+		3: '.clock__segment-bottom-right',
+		4: '.clock__segment-bottom',
+	},
+	6: {
+		0: '.clock__segment-top',
+		1: '.clock__segment-top-left',
+		2: '.clock__segment-mid',
+		3: '.clock__segment-bottom-left',
+		4: '.clock__segment-bottom-right',
+		5: '.clock__segment-bottom',
+	},
+	7: {
+		0: '.clock__segment-top',
+		1: '.clock__segment-top-right',
+		2: '.clock__segment-bottom-right',
+	},
+	8: {
+		0: '.clock__segment-top',
+		1: '.clock__segment-top-left',
+		2: '.clock__segment-top-right',
+		3: '.clock__segment-mid',
+		4: '.clock__segment-bottom-left',
+		5: '.clock__segment-bottom-right',
+		6: '.clock__segment-bottom',
+	},
+	9: {
+		0: '.clock__segment-top',
+		1: '.clock__segment-top-left',
+		2: '.clock__segment-top-right',
+		3: '.clock__segment-mid',
+		4: '.clock__segment-bottom-right',
+		5: '.clock__segment-bottom',
+	},
+	all: {
+		0: '.clock__segment-top',
+		1: '.clock__segment-top-left',
+		2: '.clock__segment-top-right',
+		3: '.clock__segment-mid',
+		4: '.clock__segment-bottom-left',
+		5: '.clock__segment-bottom-right',
+		6: '.clock__segment-bottom',
+	}
+}
