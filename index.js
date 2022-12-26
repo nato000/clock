@@ -2,12 +2,11 @@ import {numbers} from "./numbers.js";
 import {parseNumber} from "./painting-number.js";
 
 class Clock {
-	constructor(template) {
-		this.template = template;
-		this.output = null
+	constructor() {
+		this.output = {}
 	}
 
-	render() {
+	getTime() {
 		let date = new Date();
 
 		let hours = date.getHours();
@@ -27,20 +26,16 @@ class Clock {
 		return this.output
 	}
 
-	stop() {
-		clearInterval(this.timer);
-	}
-
 	start() {
-		this.render();
-		this.timer = setInterval(() => {
-			this.render()
+		this.getTime();
+		setInterval(() => {
+			this.getTime()
 			return this.output
 		}, 1000);
 	}
 }
 
-const clock = new Clock('h:m:s')
+const clock = new Clock()
 
 
 const hours = document.querySelector('.clock-hour')
@@ -60,15 +55,23 @@ function showTime() {
 	showHour()
 	showMinute()
 	showSeconds()
+	let currentTime = clock.output
 	setInterval(() => {
-		showHour()
-		showMinute()
+		if (currentTime.h !== clock.output.h) {
+			showHour()
+			currentTime = clock.output
+		}
+		if (currentTime.m !== clock.output.m) {
+			showMinute()
+			currentTime = clock.output
+		}
 		showSeconds()
 	}, 1000);
+
 }
 
 function showHour() {
-	let hourArray = (clock.output.h + '').split('')
+	const hourArray = (clock.output.h + '').split('')
 	parseNumber(hourArray[0], firstHourNumber)
 	parseNumber(hourArray[1], secondHourNumber)
 }
@@ -80,7 +83,7 @@ function showMinute() {
 }
 
 function showSeconds() {
-	let secondsArray = (clock.output.s + '').split('')
+	const secondsArray = (clock.output.s + '').split('')
 	parseNumber(secondsArray[0], firstSecondsNumber)
 	parseNumber(secondsArray[1], secondSecondsNumber)
 }

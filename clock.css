@@ -21,7 +21,7 @@ body {
 	--number-width: 100px;
 	--border-radius: 20px;
 	--shadow-color: rgba(0, 0, 0, 0.5);
-	--box-shadow: 0 0 4px 7px var(--shadow-color);
+	--box-shadow: 0 0 calc(var(--size) * 0.3) calc(var(--size) * 0.7) var(--shadow-color);
 	--transition: background 0.2s ease-in-out;
 	--transition-delayed: background 0.2s cubic-bezier(1, -0.07, 1, -0.07);
 	--segments-color: rgba(0, 0, 0, 0.3);
@@ -36,13 +36,14 @@ body {
 	display: flex;
 	width: calc(var(--number-width) * 2 + 50px);
 	justify-content: space-around;
-	margin: 0 10px;
+	margin: 0 calc(var(--size) * 2);
 }
 
 .clock-dots {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+	margin: 0 var(--size);
 }
 
 .clock-dots__top,
@@ -62,7 +63,7 @@ body {
 	.clock-hour,
 	.clock-minutes,
 	.clock-seconds {
-		margin: 20px 0;
+		margin: calc(var(--size) * 2) 0;
 	}
 
 	.clock-dots {
