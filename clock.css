@@ -23,7 +23,7 @@ body {
 	--shadow-color: rgba(0, 0, 0, 0.5);
 	--box-shadow: 0 0 calc(var(--size) * 0.3) calc(var(--size) * 0.7) var(--shadow-color);
 	--transition: background 0.2s ease-in-out;
-	--transition-delayed: background 0.2s cubic-bezier(1, -0.07, 1, -0.07);
+	--transition-delayed: background 0.1s cubic-bezier(1, -0.07, 1, -0.07);
 	--segments-color: rgba(0, 0, 0, 0.3);
 	--main-color: rgb(255, 255, 255);
 	font-size: 40px;
