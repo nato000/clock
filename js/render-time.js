@@ -3,19 +3,7 @@ import {Clock} from "./clock-class.js";
 
 const clock = new Clock()
 
-const hours = document.querySelector('.clock-hour')
-const firstHourNumber = hours.querySelector('#hour1')
-const secondHourNumber = hours.querySelector('#hour2')
-
-const minutes = document.querySelector('.clock-minutes')
-const firstMinuteNumber = minutes.querySelector('#minute1')
-const secondMinuteNumber = minutes.querySelector('#minute2')
-
-const seconds = document.querySelector('.clock-seconds')
-const firstSecondsNumber = seconds.querySelector('#second1')
-const secondSecondsNumber = seconds.querySelector('#second2')
-
-function showTime() {
+export function showTime() {
 	clock.start()
 	showHour()
 	showMinute()
@@ -36,22 +24,31 @@ function showTime() {
 }
 
 function showHour() {
+	const hours = document.querySelector('.clock-hours')
+	const firstHourNumber = hours.querySelector('#hour1')
+	const secondHourNumber = hours.querySelector('#hour2')
+
 	const hourArray = (clock.output.h + '').split('')
 	parseNumber(hourArray[0], firstHourNumber)
 	parseNumber(hourArray[1], secondHourNumber)
 }
 
 function showMinute() {
+	const minutes = document.querySelector('.clock-minutes')
+	const firstMinuteNumber = minutes.querySelector('#minute1')
+	const secondMinuteNumber = minutes.querySelector('#minute2')
+
 	const minuteArray = (clock.output.m + '').split('')
 	parseNumber(minuteArray[0], firstMinuteNumber)
 	parseNumber(minuteArray[1], secondMinuteNumber)
 }
 
 function showSeconds() {
+	const seconds = document.querySelector('.clock-seconds')
+	const firstSecondsNumber = seconds.querySelector('#second1')
+	const secondSecondsNumber = seconds.querySelector('#second2')
+
 	const secondsArray = (clock.output.s + '').split('')
 	parseNumber(secondsArray[0], firstSecondsNumber)
 	parseNumber(secondsArray[1], secondSecondsNumber)
 }
-
-showTime()
-

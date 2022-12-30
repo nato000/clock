@@ -30,7 +30,7 @@ body {
 	display: flex;
 }
 
-.clock-hour,
+.clock-hours,
 .clock-minutes,
 .clock-seconds {
 	display: flex;
@@ -60,7 +60,7 @@ body {
 		flex-direction: column;
 	}
 
-	.clock-hour,
+	.clock-hours,
 	.clock-minutes,
 	.clock-seconds {
 		margin: calc(var(--size) * 2) 0;
